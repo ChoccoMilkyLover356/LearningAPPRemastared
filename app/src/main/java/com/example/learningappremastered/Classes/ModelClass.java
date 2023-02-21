@@ -2,17 +2,17 @@ package com.example.learningappremastered.Classes;
 
 public class ModelClass {
 
-    private int ColorFind;
+    private int colorFind;
 
-    public ModelClass(int ColorFind){
-        this.ColorFind=ColorFind;
+    public ModelClass(int colorFind){
+        this.colorFind=colorFind;
     }
 
     public int getColorFind() {
-        return ColorFind;
+        return colorFind;
     }
 
     public void setColorFind(int colorFind) {
-        ColorFind = colorFind;
+        colorFind = colorFind;
     }
 }

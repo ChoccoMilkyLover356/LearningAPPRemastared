@@ -35,11 +35,11 @@ public class HomeActivity extends AppCompatActivity {
 
         gameList = new ArrayList<>();
 
-        gameList.add(new ModelClass(R.drawable.colorFind));
+        gameList.add(new ModelClass(R.drawable.colorfind));
 
-        gameList.add(new ModelClass(R.drawable.colorFind));
+        gameList.add(new ModelClass(R.drawable.colorfind));
 
-        gameList.add(new ModelClass(R.drawable.colorFind));
+        gameList.add(new ModelClass(R.drawable.colorfind));
 
     }
 

@@ -10,16 +10,16 @@ import com.example.learningappremastered.R;
 
 public class HomeHolder extends RecyclerView.ViewHolder {
 
-    private ImageView ColorFind;
+    private ImageView colorFind;
 
     public HomeHolder(@NonNull View itemView) {
         super(itemView);
 
-        ColorFind=itemView.findViewById(R.id.ColorFind);
+        colorFind=itemView.findViewById(R.id.ColorFind);
 
     }
 
     public void setdata(int game) {
-        ColorFind.setImageResource(game);
+        colorFind.setImageResource(game);
     }
 }
