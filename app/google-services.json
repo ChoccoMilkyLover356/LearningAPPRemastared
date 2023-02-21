@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "303344002775",
+    "project_id": "learning-app-remastered",
+    "storage_bucket": "learning-app-remastered.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303344002775:android:13c51060771b9469f3b292",
+        "android_client_info": {
+          "package_name": "com.example.learningappremastered"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "303344002775-cj3i4r0jg4pp1abjua1r0e7o7a9rnjos.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBErUYe9MOUWVQN1C54fGKF2LmjM70Ea7c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "303344002775-cj3i4r0jg4pp1abjua1r0e7o7a9rnjos.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
