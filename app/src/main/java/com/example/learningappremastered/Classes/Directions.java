@@ -2,7 +2,7 @@ package com.example.learningappremastered.Classes;
 
 import java.util.ArrayList;
 
-public class Directions extends com.example.learningapp.Classes.ActiveGame {
+public class Directions extends com.example.learningappremastered.Classes.ActiveGame {
     ArrayList<String> directions = new ArrayList<String>();
 
     public Directions(int totalPlayTime, int playTimeToday, boolean visible, String name, int points, ArrayList<String> directions) {
