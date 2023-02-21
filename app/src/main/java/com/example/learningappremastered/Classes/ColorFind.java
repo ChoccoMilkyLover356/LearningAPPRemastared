@@ -2,10 +2,10 @@ package com.example.learningappremastered.Classes;
 
 import java.util.ArrayList;
 
-public class Colors extends com.example.learningappremastered.Classes.ActiveGame {
+public class ColorFind extends com.example.learningappremastered.Classes.ActiveGame {
     ArrayList<String> colors = new ArrayList<String>();
 
-    public Colors(int totalPlayTime, int playTimeToday, boolean visible, String name, int points, ArrayList<String> colors) {
+    public ColorFind(int totalPlayTime, int playTimeToday, boolean visible, String name, int points, ArrayList<String> colors) {
         super(totalPlayTime, playTimeToday, visible, name, points);
         this.colors = colors;
     }
