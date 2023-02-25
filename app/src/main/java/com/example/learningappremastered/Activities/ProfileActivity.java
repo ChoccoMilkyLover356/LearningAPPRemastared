@@ -6,42 +6,30 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 
 import com.example.learningappremastered.Classes.ModelClass;
 import com.example.learningappremastered.R;
 
-import org.checkerframework.checker.units.qual.A;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity implements SelectListener {
+public class ProfileActivity extends AppCompatActivity implements SelectListener {
 
     RecyclerView recyclerView;
     LinearLayoutManager layoutManager;
-    List<ModelClass>gameList;
-    HomeAdapter adapter;
+    List<ModelClass> gameList;
+    ProfileAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        
+        setContentView(R.layout.activity_profile);
+
         initData();
         initRecyclerView();
 
-    }
-
-    private void goProfileActivity(View v){
-        Intent intent = new Intent(this, ProfileActivity.class);
-        startActivity(intent);
-    }
-
-    private void goSettingActivity(View v){
-        Intent intent = new Intent(this, SettingsActivity.class);
-        startActivity(intent);
     }
 
     private void initData() {
@@ -58,11 +46,11 @@ public class HomeActivity extends AppCompatActivity implements SelectListener {
 
     private void initRecyclerView() {
 
-        recyclerView=findViewById(R.id.recViewGames);
+        recyclerView=findViewById(R.id.recyclerViewProfile);
         layoutManager= new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
-        adapter=new HomeAdapter(gameList, this);
+        adapter=new ProfileAdapter(gameList, this);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
@@ -73,4 +61,5 @@ public class HomeActivity extends AppCompatActivity implements SelectListener {
         Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
     }
+
 }

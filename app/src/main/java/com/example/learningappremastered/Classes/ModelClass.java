@@ -2,17 +2,17 @@ package com.example.learningappremastered.Classes;
 
 public class ModelClass {
 
-    private int colorFind;
+    private int resource;
 
-    public ModelClass(int colorFind){
-        this.colorFind=colorFind;
+    public ModelClass(int resource){
+        this.resource=resource;
     }
 
-    public int getColorFind() {
-        return colorFind;
+    public int getResource() {
+        return resource;
     }
 
-    public void setColorFind(int colorFind) {
-        colorFind = colorFind;
+    public void setResource(int ColorFind) {
+        resource = resource;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.learningappremastered.Activities;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,25 +13,26 @@ import com.example.learningappremastered.R;
 
 import java.util.List;
 
-public class HomeAdapter extends RecyclerView.Adapter<HomeHolder> {
+public class ProfileAdapter extends RecyclerView.Adapter<ProfileHolder> {
 
     private List<ModelClass> gameList;
     private SelectListener listener;
 
-    public HomeAdapter (List<ModelClass>gameList, SelectListener listener) {
+    public ProfileAdapter(List<ModelClass>gameList, SelectListener listener) {
         this .gameList=gameList;
         this .listener=listener;
     }
 
     @NonNull
     @Override
-    public HomeHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ProfileHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.game_design,parent,false);
-        return new HomeHolder(view);
+        return new ProfileHolder(view);
     }
 
+
     @Override
-    public void onBindViewHolder(@NonNull HomeHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ProfileHolder holder, @SuppressLint("RecyclerView") int position) {
         int game = gameList.get(position).getResource();
 
         holder.setdata(game);

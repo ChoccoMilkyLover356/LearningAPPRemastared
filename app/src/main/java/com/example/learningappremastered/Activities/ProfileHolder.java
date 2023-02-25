@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.learningappremastered.R;
 
-public class HomeHolder extends RecyclerView.ViewHolder {
+public class ProfileHolder extends RecyclerView.ViewHolder {
 
     private ImageView resource;
     protected CardView cardView;
 
-    public HomeHolder(@NonNull View itemView) {
+    public ProfileHolder(@NonNull View itemView) {
         super(itemView);
 
         resource = itemView.findViewById(R.id.ColorFind);

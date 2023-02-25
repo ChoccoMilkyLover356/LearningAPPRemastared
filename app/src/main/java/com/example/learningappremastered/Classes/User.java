@@ -5,7 +5,6 @@ import java.util.Map;
 
 public class User {
     protected String username;
-    protected String gameData;
     protected Map<String, ArrayList> game;
     protected String userID;
 
@@ -31,14 +30,6 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getGameData() {
-        return gameData;
-    }
-
-    public void setGameData(String gameData) {
-        this.gameData = gameData;
     }
 
     public Map<String, ArrayList> getGame() {

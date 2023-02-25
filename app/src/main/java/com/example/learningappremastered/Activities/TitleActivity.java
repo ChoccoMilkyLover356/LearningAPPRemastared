@@ -13,6 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.learningappremastered.Classes.ModelClass;
+import com.example.learningappremastered.Classes.User;
 import com.example.learningappremastered.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -21,7 +23,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class TitleActivity extends AppCompatActivity {
@@ -30,6 +34,7 @@ public class TitleActivity extends AppCompatActivity {
     Button btnSignUp,btnLogIn;
     String txtEmail, txtPassword;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    Map<String,Integer> gameStats;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
 
@@ -100,12 +105,19 @@ public class TitleActivity extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(txtEmail, txtPassword).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
-                Map<String, Object> user = new HashMap<>();
-                user.put("Email", txtEmail);
+                Map<String, Map<String,Integer>> user = new HashMap<>();
+                gameStats = new HashMap<>();
+                gameStats.put("Score",0);
+                gameStats.put("Time",0);
+
+                user.put("ColorFind",gameStats);
+                User createdUser = new User(txtEmail, user, txtEmail.substring(0, (txtEmail.indexOf('@'))));
+
+
 
 
                 db.collection("users")
-                        .add(user)
+                        .add(createdUser)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {

@@ -25,7 +25,8 @@
         android:layout_marginTop="36dp"
         android:text="Profile"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="goProfileActivity" />
 
     <Button
         android:id="@+id/Setting"
@@ -37,5 +38,6 @@
         android:text="Settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="goSettingActivity"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
