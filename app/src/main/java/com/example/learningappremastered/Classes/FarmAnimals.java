@@ -5,8 +5,8 @@ import java.util.HashMap;
 public class FarmAnimals extends PassiveGame {
     HashMap<String,String> animalList = new HashMap<>();
 
-    public FarmAnimals(int totalPlayTime, int playTimeToday, boolean visible, String name, HashMap<String, String> animalList) {
-        super(totalPlayTime, playTimeToday, visible, name);
+    public FarmAnimals(int totalPlayTime, int playTimeToday, boolean visible, String name, int resource, HashMap<String, String> animalList) {
+        super(totalPlayTime, playTimeToday, visible, name, resource);
         this.animalList = animalList;
     }
 

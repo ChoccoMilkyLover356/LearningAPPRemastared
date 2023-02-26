@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Storys extends com.example.learningappremastered.Classes.PassiveGame {
     ArrayList<String> storyList = new ArrayList<>();
 
-    public Storys(int totalPlayTime, int playTimeToday, boolean visible, String name, ArrayList<String> storyList) {
-        super(totalPlayTime, playTimeToday, visible, name);
+    public Storys(int totalPlayTime, int playTimeToday, boolean visible, String name, int resource, ArrayList<String> storyList) {
+        super(totalPlayTime, playTimeToday, visible, name, resource);
         this.storyList = storyList;
     }
 

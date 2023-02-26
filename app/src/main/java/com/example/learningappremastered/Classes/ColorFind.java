@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class ColorFind extends com.example.learningappremastered.Classes.ActiveGame {
     ArrayList<String> colors = new ArrayList<String>();
 
-    public ColorFind(int totalPlayTime, int playTimeToday, boolean visible, String name, int points, ArrayList<String> colors) {
-        super(totalPlayTime, playTimeToday, visible, name, points);
+    public ColorFind(int totalPlayTime, int playTimeToday, boolean visible, String name, int resource, int points, ArrayList<String> colors) {
+        super(totalPlayTime, playTimeToday, visible, name, resource, points);
         this.colors = colors;
     }
 

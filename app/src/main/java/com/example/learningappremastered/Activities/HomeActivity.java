@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.learningappremastered.Classes.Game;
 import com.example.learningappremastered.Classes.ModelClass;
 import com.example.learningappremastered.R;
 
@@ -21,7 +22,7 @@ public class HomeActivity extends AppCompatActivity implements SelectListener {
 
     RecyclerView recyclerView;
     LinearLayoutManager layoutManager;
-    List<ModelClass>gameList;
+    List<Game>gameList;
     HomeAdapter adapter;
 
     @Override
@@ -34,12 +35,12 @@ public class HomeActivity extends AppCompatActivity implements SelectListener {
 
     }
 
-    private void goProfileActivity(View v){
+    public void goProfileActivity(View v){
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
 
-    private void goSettingActivity(View v){
+    public void goSettingActivity(View v){
         Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
@@ -48,11 +49,12 @@ public class HomeActivity extends AppCompatActivity implements SelectListener {
 
         gameList = new ArrayList<>();
 
-        gameList.add(new ModelClass(R.drawable.colorfind));
+        gameList.add(new Game("ColorFIndActivity", R.drawable.colorfind, true));
 
-        gameList.add(new ModelClass(R.drawable.colorfind));
+        gameList.add(new Game("ColorFIndActivity", R.drawable.colorfind, true));
 
-        gameList.add(new ModelClass(R.drawable.colorfind));
+        gameList.add(new Game("ColorFIndActivity", R.drawable.colorfind, true));
+
 
     }
 
@@ -67,10 +69,11 @@ public class HomeActivity extends AppCompatActivity implements SelectListener {
         adapter.notifyDataSetChanged();
     }
 
+
     @Override
     public void onItemClicked(ModelClass ModelClass) {
         Toast.makeText(this, "Going to " + ModelClass.getResource(), Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, GameActivity.class);
+        Intent intent = new Intent(this, ().class);
         startActivity(intent);
     }
 }

@@ -8,14 +8,22 @@ public class Game implements Parcelable {
     int playTimeToday;
     boolean visible;
     String name;
+    int resource;
 
     public Game() { }
 
-    public Game(int totalPlayTime, int playTimeToday, boolean visible, String name) {
+    public Game(int totalPlayTime, int playTimeToday, boolean visible, String name, int resource) {
         this.totalPlayTime = totalPlayTime;
         this.playTimeToday = playTimeToday;
         this.visible = visible;
         this.name = name;
+        this.resource = resource;
+    }
+
+    public Game(String name, int resource, boolean visible){
+        this.visible = visible;
+        this.name = name;
+        this.resource = resource;
     }
 
     protected Game(Parcel in) {
@@ -23,6 +31,7 @@ public class Game implements Parcelable {
         playTimeToday = in.readInt();
         visible = in.readByte() != 0;
         name = in.readString();
+        resource = in.readInt();
     }
 
     public static final Creator<Game> CREATOR = new Creator<Game>() {
@@ -43,7 +52,8 @@ public class Game implements Parcelable {
                 "totalPlayTime=" + totalPlayTime +
                 ", playTimeToday=" + playTimeToday +
                 ", visible=" + visible +
-                ", name='" + name + '\'' +
+                ", name='" + name +
+                ", resource='" + resource + '\'' +
                 '}';
     }
 
@@ -82,6 +92,14 @@ public class Game implements Parcelable {
     @Override
     public int describeContents() {
         return 0;
+    }
+
+    public int getResource() {
+        return resource;
+    }
+
+    public void setResource(int resource) {
+        this.resource = resource;
     }
 
     @Override

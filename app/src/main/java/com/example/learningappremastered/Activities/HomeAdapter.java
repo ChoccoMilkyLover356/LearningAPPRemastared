@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.learningappremastered.Classes.Game;
 import com.example.learningappremastered.Classes.ModelClass;
 import com.example.learningappremastered.R;
 
@@ -14,10 +15,10 @@ import java.util.List;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeHolder> {
 
-    private List<ModelClass> gameList;
+    private List<Game> gameList;
     private SelectListener listener;
 
-    public HomeAdapter (List<ModelClass>gameList, SelectListener listener) {
+    public HomeAdapter (List<Game>gameList, SelectListener listener) {
         this .gameList=gameList;
         this .listener=listener;
     }

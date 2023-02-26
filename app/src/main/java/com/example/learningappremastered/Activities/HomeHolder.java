@@ -12,6 +12,8 @@ import com.example.learningappremastered.R;
 public class HomeHolder extends RecyclerView.ViewHolder {
 
     private ImageView resource;
+
+    private boolean visible;
     protected CardView cardView;
 
     public HomeHolder(@NonNull View itemView) {

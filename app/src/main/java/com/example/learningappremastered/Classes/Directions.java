@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Directions extends com.example.learningappremastered.Classes.ActiveGame {
     ArrayList<String> directions = new ArrayList<String>();
 
-    public Directions(int totalPlayTime, int playTimeToday, boolean visible, String name, int points, ArrayList<String> directions) {
-        super(totalPlayTime, playTimeToday, visible, name, points);
+    public Directions(int totalPlayTime, int playTimeToday, boolean visible, String name, int resource, int points, ArrayList<String> directions) {
+        super(totalPlayTime, playTimeToday, visible, name, resource, points);
         this.directions = directions;
     }
 

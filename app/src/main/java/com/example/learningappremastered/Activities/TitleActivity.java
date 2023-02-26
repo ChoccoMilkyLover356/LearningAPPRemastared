@@ -1,6 +1,8 @@
 package com.example.learningappremastered.Activities;
 
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -57,6 +59,8 @@ public class TitleActivity extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MediaPlayer click = MediaPlayer.create(TitleActivity.this, R.raw.click);
+                click.start();
                 txtEmail = editTextEmail.getText().toString().trim();
                 txtPassword = editTextPassword.getText().toString().trim();
 
@@ -78,6 +82,8 @@ public class TitleActivity extends AppCompatActivity {
         btnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MediaPlayer click = MediaPlayer.create(TitleActivity.this, R.raw.click);
+                click.start();
                 txtEmail = editTextEmail.getText().toString().trim();
                 txtPassword = editTextPassword.getText().toString().trim();
 
@@ -97,32 +103,38 @@ public class TitleActivity extends AppCompatActivity {
             }
         });
 
+        final MediaPlayer click = MediaPlayer.create(this, R.raw.click);
+        click.start();
+
     }
 
     private void SignUpUser() {
-        btnSignUp.setVisibility(View.INVISIBLE);
+
+        btnSignUp.setVisibility(View.INVISIBLE); //so that the user doesn't click it again, breaking the program
 
         mAuth.createUserWithEmailAndPassword(txtEmail, txtPassword).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
-                Map<String, Map<String,Integer>> user = new HashMap<>();
+                Map<String, Map<String,Integer>> user = new HashMap<>(); // Creating empty game data
                 gameStats = new HashMap<>();
-                gameStats.put("Score",0);
-                gameStats.put("Time",0);
+                gameStats.put("Color Find Score",0);
+                gameStats.put("Color Find Time",0);
+                gameStats.put("Math Quiz Score",0);
+                gameStats.put("Math Quiz Time",0);
+                gameStats.put("Story Score",0);
+                gameStats.put("Story Time",0);
 
                 user.put("ColorFind",gameStats);
-                User createdUser = new User(txtEmail, user, txtEmail.substring(0, (txtEmail.indexOf('@'))));
+                User createdUser = new User(txtEmail, user, txtEmail.substring(0, (txtEmail.indexOf('@')))); // Created the empty game data
 
 
-
-
-                db.collection("users")
-                        .add(createdUser)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                db.collection("users").document(txtEmail.substring(0, (txtEmail.indexOf('@'))))
+                        .set(createdUser) //Stores the User's empty data for later
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
-                            public void onSuccess(DocumentReference documentReference) {
+                            public void onSuccess(Void aVoid) {
                                 Toast.makeText(TitleActivity.this, "Data Stored Successfully !", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(TitleActivity.this, HomeActivity.class);
+                                Intent intent = new Intent(TitleActivity.this, HomeActivity.class); //taking the user to home page
                                 startActivity(intent);
                                 finish();
                             }
@@ -138,7 +150,7 @@ public class TitleActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(TitleActivity.this, "Error " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                btnSignUp.setVisibility(View.VISIBLE);
+                btnSignUp.setVisibility(View.VISIBLE); // so that the user can press it again once they fix the problem
             }
         });
 
@@ -146,6 +158,7 @@ public class TitleActivity extends AppCompatActivity {
     private void LogInUser() {
         btnLogIn.setVisibility(View.INVISIBLE);
 
+        // VVVV Login the user VVVV
         mAuth.signInWithEmailAndPassword(txtEmail, txtPassword).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
