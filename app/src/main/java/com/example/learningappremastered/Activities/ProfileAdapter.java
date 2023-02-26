@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.learningappremastered.Classes.Game;
 import com.example.learningappremastered.Classes.ModelClass;
 import com.example.learningappremastered.R;
 
@@ -15,10 +16,10 @@ import java.util.List;
 
 public class ProfileAdapter extends RecyclerView.Adapter<ProfileHolder> {
 
-    private List<ModelClass> gameList;
+    private List<Game> gameList;
     private SelectListener listener;
 
-    public ProfileAdapter(List<ModelClass>gameList, SelectListener listener) {
+    public ProfileAdapter(List<Game>gameList, SelectListener listener) {
         this .gameList=gameList;
         this .listener=listener;
     }
@@ -40,7 +41,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileHolder> {
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onItemClicked(gameList.get(position));
+                    listener.onItemClicked(gameList.get(position));
             }
         });
     }

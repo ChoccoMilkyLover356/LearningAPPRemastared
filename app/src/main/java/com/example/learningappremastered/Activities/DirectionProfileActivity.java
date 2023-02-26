@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.example.learningappremastered.Classes.UserSettings;
 import com.example.learningappremastered.R;
 
-public class ColorFindProfileActivity extends AppCompatActivity{
+public class DirectionProfileActivity extends AppCompatActivity{
     private UserSettings settings;
     Switch colorFindSwitch;
 
@@ -26,38 +26,38 @@ public class ColorFindProfileActivity extends AppCompatActivity{
 
         loadSharedPreferences();
         initSwitchListener();
-        updateView();
+
 
     }
 
     private void loadSharedPreferences(){
-        SharedPreferences sharedPreferences = getSharedPreferences(UserSettings.PREFERENCES_C, MODE_PRIVATE);
-        String visibility = sharedPreferences.getString(UserSettings.CUSTOM_VISIBILITY_C, UserSettings.VISIBILITY_TRUE_C);
-        settings.setCustomVisibilityC(visibility);
+        SharedPreferences sharedPreferences = getSharedPreferences(UserSettings.PREFERENCES_D, MODE_PRIVATE);
+        String visibility = sharedPreferences.getString(UserSettings.CUSTOM_VISIBILITY_D, UserSettings.VISIBILITY_TRUE_D);
+        settings.setCustomVisibilityD(visibility);
     }
 
     private void initSwitchListener(){
         colorFindSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Toast.makeText(ColorFindProfileActivity.this, "Switch State=" + ""+isChecked, Toast.LENGTH_SHORT).show();
-                if(!isChecked) {
-                    settings.setCustomVisibilityC(UserSettings.VISIBILITY_FALSE_C);
+                Toast.makeText(DirectionProfileActivity.this, "Switch State=" + ""+isChecked, Toast.LENGTH_SHORT).show();
+                if(isChecked) {
+                    settings.setCustomVisibilityD(UserSettings.VISIBILITY_FALSE_D);
                 }else{
-                    settings.setCustomVisibilityC(UserSettings.VISIBILITY_TRUE_C);
-                    }
-                SharedPreferences.Editor editor = getSharedPreferences(UserSettings.PREFERENCES_C,MODE_PRIVATE).edit();
-                editor.putString(UserSettings.CUSTOM_VISIBILITY_C, settings.getCustomVisibilityC());
+                    settings.setCustomVisibilityD(UserSettings.VISIBILITY_TRUE_D);
+                }
+                SharedPreferences.Editor editor = getSharedPreferences(UserSettings.PREFERENCES_D,MODE_PRIVATE).edit();
+                editor.putString(UserSettings.CUSTOM_VISIBILITY_D, settings.getCustomVisibilityD());
                 editor.apply();
                 updateView();
             }
         });
     }
     private void updateView() {
-        if(settings.getCustomVisibilityC() == UserSettings.VISIBILITY_FALSE_C){
-            colorFindSwitch.setChecked(false);
-        } else {
+        if(settings.getCustomVisibilityD() == UserSettings.VISIBILITY_FALSE_D){
             colorFindSwitch.setChecked(true);
+        } else {
+            colorFindSwitch.setChecked(false);
         }
     }
 

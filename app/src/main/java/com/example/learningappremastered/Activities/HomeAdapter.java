@@ -1,5 +1,6 @@
 package com.example.learningappremastered.Activities;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,14 +33,19 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull HomeHolder holder, int position) {
-        int game = gameList.get(position).getResource();
 
+            if (!gameList.get(position).isVisible()) {
+                holder.cardView.setVisibility(View.GONE);
+                return;
+            }
+
+        int game = gameList.get(position).getResource();
         holder.setdata(game);
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onItemClicked(gameList.get(position));
+                    listener.onItemClicked(gameList.get(position));
             }
         });
     }

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.learningappremastered.Classes.Game;
 import com.example.learningappremastered.Classes.ModelClass;
 import com.example.learningappremastered.R;
 
@@ -18,7 +19,7 @@ public class ProfileActivity extends AppCompatActivity implements SelectListener
 
     RecyclerView recyclerView;
     LinearLayoutManager layoutManager;
-    List<ModelClass> gameList;
+    List<Game> gameList;
     ProfileAdapter adapter;
 
 
@@ -36,11 +37,11 @@ public class ProfileActivity extends AppCompatActivity implements SelectListener
 
         gameList = new ArrayList<>();
 
-        gameList.add(new ModelClass(R.drawable.colorfind));
+        gameList.add(new Game("ColorFindActivity", R.drawable.colorfind, true));
 
-        gameList.add(new ModelClass(R.drawable.colorfind));
+        gameList.add(new Game("MathGameActivity", R.drawable.mathgame, true));
 
-        gameList.add(new ModelClass(R.drawable.colorfind));
+        gameList.add(new Game("DirectionActivity", R.drawable.directions, true));
 
     }
 
@@ -56,9 +57,9 @@ public class ProfileActivity extends AppCompatActivity implements SelectListener
     }
 
     @Override
-    public void onItemClicked(ModelClass ModelClass) {
-        Toast.makeText(this, "Going to " + ModelClass.getResource(), Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, GameActivity.class);
+    public void onItemClicked(Game Game) {
+        Toast.makeText(this, "Going to " + Game.getName(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, ColorFindProfileActivity.class);
         startActivity(intent);
     }
 
