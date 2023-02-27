@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Activities.SettingsActivity">
 
-    <Switch
-        android:id="@+id/audioSwitch"
-        android:layout_width="155dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="32dp"
-        android:switchMinWidth="20dp"
-        android:text="Audio"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="408dp"
@@ -34,6 +22,7 @@
             android:layout_marginTop="26dp"
             android:layout_marginEnd="265dp"
             android:layout_marginBottom="26dp"
+            android:onClick="goHome"
             android:text="Home"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -45,13 +34,14 @@
         android:id="@+id/btnLogOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="313dp"
+        android:layout_marginTop="415dp"
         android:background="#FF0000"
         android:backgroundTint="#FF0000"
+        android:onClick="logOut"
         android:text="LOG OUT"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/audioSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         app:strokeColor="#FF0000" />
 </androidx.constraintlayout.widget.ConstraintLayout>

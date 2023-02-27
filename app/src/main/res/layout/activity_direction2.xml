@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.DirectionActivity">
+    tools:context=".Activities.DirectionActivity2">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="69dp"
-        android:text="UP"
+        android:text="Left"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -50,7 +50,6 @@
         android:layout_marginTop="89dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
-        android:onClick="goNext"
         android:rotation="180"
         app:icon="@drawable/baseline_arrow_circle_down_24"
         app:iconPadding="0dp"

@@ -171,7 +171,7 @@ public class TitleActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(TitleActivity.this, "Error " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                btnSignUp.setVisibility(View.VISIBLE);
+                btnLogIn.setVisibility(View.VISIBLE);
             }
         });
 

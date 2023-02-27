@@ -68,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:text="3.28 Minutes"
+        android:text="2.5 Minutes"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/favoriteGameTextView2"
         app:layout_constraintStart_toEndOf="@+id/favoriteGameTextView2"

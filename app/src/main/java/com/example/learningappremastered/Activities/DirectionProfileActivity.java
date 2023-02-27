@@ -26,7 +26,7 @@ public class DirectionProfileActivity extends AppCompatActivity{
 
         loadSharedPreferences();
         initSwitchListener();
-
+        updateView();
 
     }
 
@@ -41,7 +41,7 @@ public class DirectionProfileActivity extends AppCompatActivity{
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 Toast.makeText(DirectionProfileActivity.this, "Switch State=" + ""+isChecked, Toast.LENGTH_SHORT).show();
-                if(isChecked) {
+                if(!isChecked) {
                     settings.setCustomVisibilityD(UserSettings.VISIBILITY_FALSE_D);
                 }else{
                     settings.setCustomVisibilityD(UserSettings.VISIBILITY_TRUE_D);
@@ -55,9 +55,9 @@ public class DirectionProfileActivity extends AppCompatActivity{
     }
     private void updateView() {
         if(settings.getCustomVisibilityD() == UserSettings.VISIBILITY_FALSE_D){
-            colorFindSwitch.setChecked(true);
-        } else {
             colorFindSwitch.setChecked(false);
+        } else {
+            colorFindSwitch.setChecked(true);
         }
     }
 

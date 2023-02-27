@@ -26,7 +26,7 @@ public class MathGameProfileActivity extends AppCompatActivity{
 
         loadSharedPreferences();
         initSwitchListener();
-
+        updateView();
 
     }
 
@@ -41,7 +41,7 @@ public class MathGameProfileActivity extends AppCompatActivity{
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 Toast.makeText(MathGameProfileActivity.this, "Switch State=" + ""+isChecked, Toast.LENGTH_SHORT).show();
-                if(isChecked) {
+                if(!isChecked) {
                     settings.setCustomVisibilityM(UserSettings.VISIBILITY_FALSE_M);
                 }else{
                     settings.setCustomVisibilityM(UserSettings.VISIBILITY_TRUE_M);
@@ -55,9 +55,9 @@ public class MathGameProfileActivity extends AppCompatActivity{
     }
     private void updateView() {
         if(settings.getCustomVisibilityM() == UserSettings.VISIBILITY_FALSE_M){
-            colorFindSwitch.setChecked(true);
-        } else {
             colorFindSwitch.setChecked(false);
+        } else {
+            colorFindSwitch.setChecked(true);
         }
     }
 

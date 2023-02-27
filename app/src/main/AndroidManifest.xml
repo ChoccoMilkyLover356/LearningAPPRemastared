@@ -17,6 +17,12 @@
         android:theme="@style/Theme.LearningAPPRemastered"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.MathGameActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.DirectionActivity2"
+            android:exported="false" />
+        <activity
             android:name=".Activities.DirectionProfileActivity"
             android:exported="false" />
         <activity

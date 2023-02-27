@@ -4,9 +4,9 @@ import android.app.Application;
 
 public class UserSettings extends Application
 {
-    public static final String PREFERENCES_C = "preferences";
-    public static final String PREFERENCES_M = "preferences";
-    public static final String PREFERENCES_D = "preferences";
+    public static final String PREFERENCES_C = "preferences_C";
+    public static final String PREFERENCES_M = "preferences_M";
+    public static final String PREFERENCES_D = "preferences_D";
     public static final String CUSTOM_VISIBILITY_C = "customVisibilityC";
     public static final String VISIBILITY_TRUE_C = "visibilityTrueC";
     public static final String VISIBILITY_FALSE_C = "visibilityFalseC";
@@ -41,8 +41,8 @@ public class UserSettings extends Application
         return customVisibilityC;
     }
 
-    public void setCustomVisibilityC(String customVisibility) {
-        this.customVisibilityC = customVisibility;
+    public void setCustomVisibilityC(String customVisibilityC) {
+        this.customVisibilityC = customVisibilityC;
     }
 
 }

@@ -51,15 +51,15 @@ public class HomeActivity extends AppCompatActivity implements SelectListener {
         }
 
         if(settings.getCustomVisibilityM() == UserSettings.VISIBILITY_FALSE_M){
-            gameList.add(1,new Game("MathGameActivity", R.drawable.mathgame, false));
+            gameList.set(1,new Game("MathGameActivity", R.drawable.mathgame, false));
         } else {
-            gameList.add(1,new Game("MathGameActivity", R.drawable.mathgame, true));
+            gameList.set(1,new Game("MathGameActivity", R.drawable.mathgame, true));
         }
 
         if(settings.getCustomVisibilityD() == UserSettings.VISIBILITY_FALSE_D){
-            gameList.add(2,new Game("DirectionActivity", R.drawable.directions, false));
+            gameList.set(2,new Game("DirectionActivity", R.drawable.directions, false));
         } else {
-            gameList.add(2,new Game("DirectionActivity", R.drawable.directions, true));
+            gameList.set(2,new Game("DirectionActivity", R.drawable.directions, true));
         }
     }
 

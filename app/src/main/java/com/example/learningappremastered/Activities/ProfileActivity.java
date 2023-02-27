@@ -59,7 +59,17 @@ public class ProfileActivity extends AppCompatActivity implements SelectListener
     @Override
     public void onItemClicked(Game Game) {
         Toast.makeText(this, "Going to " + Game.getName(), Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, ColorFindProfileActivity.class);
+        String goTo = Game.getName();
+        Intent intent = null;
+        if(goTo.equals("ColorFindActivity")) {
+            intent = new Intent(this, ColorFindProfileActivity.class);
+        }
+        if(goTo.equals("MathGameActivity")) {
+            intent = new Intent(this, MathGameProfileActivity.class);
+        }
+        if(goTo.equals("DirectionActivity")) {
+            intent = new Intent(this, DirectionProfileActivity.class);
+        }
         startActivity(intent);
     }
 
