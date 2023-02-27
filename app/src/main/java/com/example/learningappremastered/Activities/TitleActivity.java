@@ -124,7 +124,7 @@ public class TitleActivity extends AppCompatActivity {
                 gameStats.put("Story Score",0);
                 gameStats.put("Story Time",0);
 
-                user.put("ColorFind",gameStats);
+                user.put("GameStats",gameStats);
                 User createdUser = new User(txtEmail, user, txtEmail.substring(0, (txtEmail.indexOf('@')))); // Created the empty game data
 
 
